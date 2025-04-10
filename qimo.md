@@ -335,6 +335,7 @@ ax3.axis('equal')  # 确保饼图是圆形的
 
 # 调整布局
 plt.tight_layout()
+plt.savefig('photo/全球游戏销量和分布分析.png', bbox_inches='tight', dpi=300)
 plt.show()
 ```
 
@@ -417,7 +418,9 @@ ax1.legend(handles1 + handles2, labels1 + labels2, loc='upper left')
 # 添加网格线
 ax1.grid(True, linestyle='--', alpha=0.3)
 plt.tight_layout()
+plt.savefig('photo/年度发行量和销售额趋势.png', bbox_inches='tight', dpi=300)
 plt.show()
+
 ```
 
 
@@ -560,6 +563,7 @@ for i in bars.patches:
     i.set_edgecolor('Grey')
 ax3.grid(axis='y', linestyle='--', alpha=0.3)
 plt.tight_layout()
+plt.savefig('photo/平台类型和发行商销售分析.png', bbox_inches='tight', dpi=300)
 plt.show()
 ```
 
@@ -676,6 +680,7 @@ plt.pie(sales, explode=explode, labels=labels, colors=colors,
 plt.title('各地区销售总额分布', fontsize=16, fontweight='bold')
 plt.axis('equal')
 plt.legend(regions, loc="best", fontsize=12)
+plt.savefig('photo/地区销售分布.png', bbox_inches='tight', dpi=300)
 plt.show()
 ```
 
@@ -720,6 +725,7 @@ for i in bar3.patches:
     i.set_edgecolor('grey')
 ax3.grid(axis='x', linestyle='--', alpha=0.3)
 plt.tight_layout()
+plt.savefig('photo/地区游戏类型偏好分析.png', bbox_inches='tight', dpi=300)
 plt.show()
 ```
 
@@ -778,6 +784,7 @@ sns.heatmap(pivot_table, annot=False, cmap="YlGnBu", linewidths=.5)
 plt.title('Publisher与Genre的关联热图', fontsize=16, fontweight='bold')
 plt.xlabel('游戏类型')
 plt.ylabel('发行商')
+plt.savefig('photo/发行商与游戏类型关联分析.png', bbox_inches='tight', dpi=300)
 plt.show()
 ```
 
@@ -794,6 +801,7 @@ plt.show()
 
 
 ```python
+#2.回归分析
 yearly_sales = sdf.groupBy("Year").agg(sum("Global_Sales").alias("Total_Sales")).orderBy("Year")
 #向量化
 assembler = VectorAssembler(inputCols=["Year"], outputCol="features")
@@ -827,6 +835,7 @@ plt.title("视频游戏全球销售额趋势及2017年预测", fontsize=16, font
 plt.xlabel("年份")
 plt.ylabel("全球销售额（百万单位）")
 plt.grid(True, linestyle='--', alpha=0.3)
+plt.savefig('photo/销售趋势预测.png', bbox_inches='tight', dpi=300)
 plt.show()
 
 #结果可能是因为销售数据的统计截至2016年，而游戏的销售周期很长，又以游戏发售年份统计的，所以导致发行时间近的游戏累计销量较少，发行时间远的游戏累计销量会越来越高。
