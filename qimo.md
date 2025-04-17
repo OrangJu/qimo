@@ -1,3 +1,6 @@
+**Author:** 齐骋之
+**Date:** 2025-4-17
+**GitHub:** [OrangJu](https://github.com/OrangJu/qimo)
 ```python
 # 导入数据集
 import pandas as pd
